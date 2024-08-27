@@ -1,6 +1,7 @@
 "use client";
 import { createTheme } from '@mui/material/styles';
 import { Merriweather } from 'next/font/google';
+import { colors } from './colors';
 
 const merri = Merriweather({
     weight: ["400", "700", "900"],
@@ -37,6 +38,26 @@ const theme = createTheme({
       }
       
     },
+    components: {
+        MuiButton: {
+            variants: [
+                {
+                  props: { variant: 'contained', color: 'primary' },
+                  style: {
+                    backgroundColor: colors.black,
+                    color: colors.white,
+                    borderRadius:"12px",
+                    height:"40px",
+                    fontSize:"16px",
+                    fontWeight:"700",
+                    padding:"0 20px",
+                    fontFamily:"Lora",
+                    textTransform:"none",
+                  },
+                },
+              ],
+        }
+    }
 });
   
   export default theme;
