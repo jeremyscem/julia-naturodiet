@@ -35,7 +35,15 @@ const theme = createTheme({
       h6: {
           fontSize:"20px",
           fontWeight:"700",
-      }
+      },
+      body1: {
+          fontSize:"18px",
+          fontWeight:"400",
+        },
+        body2: {
+          fontSize:"16px",
+          fontWeight:"600",
+        }
       
     },
     components: {
@@ -50,12 +58,29 @@ const theme = createTheme({
                     height:"40px",
                     fontSize:"16px",
                     fontWeight:"700",
-                    padding:"0 20px",
+                    padding:"0 24px",
                     fontFamily:"Lora",
                     textTransform:"none",
+                    boxShadow:"none",
                   },
-                },
+                },{
+                    props: { variant: 'contained', color: 'secondary' },
+                    style: {
+                      backgroundColor: colors.neutral,
+                      color: colors.black,
+                      borderRadius:"12px",
+                      height:"40px",
+                      fontSize:"16px",
+                      fontWeight:"700",
+                      padding:"0 24px",
+                      fontFamily:"Lora",
+                      textTransform:"none",
+                      border:`1px solid ${colors.black}`,
+                      boxShadow:"none",
+                    },
+                  },
               ],
+              
         }
     }
 });
