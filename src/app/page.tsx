@@ -1,5 +1,6 @@
-import HeroSection from "@/components/Hero/HeroSection";
-import MyServices from "@/components/MyServices/MyServices";
+import AboutMe from "@/Layout/AboutMe/AboutMe";
+import HeroSection from "@/Layout/Hero/HeroSection";
+import MyServices from "@/Layout/MyServices/MyServices";
 
 // async function getData() {
 //   const res = await fetch(process.env.STRAPI_BASE_URL + "/api/home-page");
@@ -19,6 +20,7 @@ export default async function Home() {
       {/* {data?.data.attributes?.description} */}
       <HeroSection />
       <MyServices />
+      <AboutMe />
     </main>
   );
 }
