@@ -12,6 +12,7 @@ const ServicesDetails = () => {
         width: "100%",
         gap: "40px",
         justifyContent: "space-between",
+        position: "relative",
       }}
     >
       <Box
@@ -19,16 +20,14 @@ const ServicesDetails = () => {
           display: "flex",
           flexDirection: "column",
           width: "640px",
-
+          overflow: "hidden",
+          borderRadius: "80px",
+          zIndex: 1,
           boxShadow:
             "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
         }}
       >
         <Image
-          style={{
-            borderTopLeftRadius: "80px",
-            borderTopRightRadius: "80px",
-          }}
           src={services[0].imageUrl}
           width={640}
           height={360}
@@ -39,8 +38,6 @@ const ServicesDetails = () => {
             padding: "48px",
             backgroundColor: colors.white,
             display: "flex",
-            borderBottomLeftRadius: "80px",
-            borderBottomRightRadius: "80px",
             flexGrow: 1,
             flexDirection: "column",
             justifyContent: "center",
@@ -79,6 +76,8 @@ const ServicesDetails = () => {
               display: "flex",
               width: "640px",
               backgroundColor: "transparent",
+              overflow: "hidden",
+              borderRadius: "40px",
               boxShadow:
                 "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
             }}
@@ -89,8 +88,7 @@ const ServicesDetails = () => {
                 padding: "24px",
                 backgroundColor: colors.white,
                 display: "flex",
-                borderBottomLeftRadius: "40px",
-                borderTopLeftRadius: "40px",
+
                 flexGrow: 1,
                 flexDirection: "column",
                 justifyContent: "center",
@@ -117,8 +115,6 @@ const ServicesDetails = () => {
             </Box>
             <Image
               style={{
-                borderTopRightRadius: "40px",
-                borderBottomRightRadius: "40px",
                 flexGrow: 1,
               }}
               src={service.imageUrl}

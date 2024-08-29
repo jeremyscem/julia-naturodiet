@@ -1,5 +1,6 @@
 import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
+import Image from "next/image";
 import ServicesDetails from "./ServicesDetails";
 
 const MyServices = () => {
@@ -11,8 +12,17 @@ const MyServices = () => {
         display: "flex",
         flexDirection: "column",
         gap: 10,
+        position: "relative",
+        zIndex: 1,
       }}
     >
+      <Image
+        src="/services/Vector.png"
+        width={602}
+        height={626}
+        alt="Vector"
+        style={{ position: "absolute", bottom: "160px", left: "0", zIndex: 0 }}
+      />
       <Box sx={{ display: "flex", width: "100%" }}>
         <Box sx={{ flex: "1" }}>
           <Typography variant="body1">Mes différents services</Typography>
