@@ -1,4 +1,3 @@
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import ServicesDetails from "./ServicesDetails";
@@ -7,7 +6,6 @@ const MyServices = () => {
   return (
     <Box
       sx={{
-        backgroundColor: colors.neutral,
         padding: "112px 64px",
         display: "flex",
         flexDirection: "column",
@@ -24,7 +22,9 @@ const MyServices = () => {
         style={{ position: "absolute", bottom: "160px", left: "0", zIndex: 0 }}
       />
       <Box sx={{ display: "flex", width: "100%" }}>
-        <Box sx={{ flex: "1" }}>
+        <Box
+          sx={{ flex: "1", display: "flex", flexDirection: "column", gap: 2 }}
+        >
           <Typography variant="body1">Mes différents services</Typography>
           <Box sx={{ flex: "1", marginRight: "32px" }}>
             <Typography variant="h2">Mes différents services</Typography>

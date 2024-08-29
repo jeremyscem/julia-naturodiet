@@ -14,7 +14,19 @@ const HeroSection = () => {
         height={40}
         alt="logo julia naturodiet"
       />
-      <Video src="/heroVideo.mov" />
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+          overflow: "hidden",
+        }}
+      >
+        <Video src="/heroVideo.mov" />
+      </Box>
       <Box
         sx={{
           position: "absolute",
@@ -28,7 +40,7 @@ const HeroSection = () => {
           gap: "24px",
           alignItems: "flex-start",
           maxWidth: "645px",
-          zIndex: 1,
+          zIndex: 2,
           filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.16))",
         }}
       >

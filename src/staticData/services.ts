@@ -1,3 +1,5 @@
+import { ServicesType } from "@/utils/types/homePagetypes";
+
 export const services:ServicesType[] = [{
     "isPrincipal": true,
     "name": "Home",

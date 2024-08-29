@@ -1,4 +1,4 @@
-interface ServicesType {
+export interface ServicesType {
     name: string;
     description: string;
     imageUrl: string;
@@ -6,3 +6,10 @@ interface ServicesType {
     isPrincipal: boolean;
     title: string;
 }
+export interface TestimonialsType {
+    id: number;
+    name: string;
+    text: string;
+}
+
+

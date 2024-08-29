@@ -1,4 +1,3 @@
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 
@@ -6,7 +5,6 @@ const AboutMe = () => {
   return (
     <Box
       sx={{
-        backgroundColor: colors.neutral,
         padding: "112px 64px",
         display: "flex",
         flexDirection: "column",
@@ -14,7 +12,9 @@ const AboutMe = () => {
       }}
     >
       <Box sx={{ display: "flex", width: "100%" }}>
-        <Box sx={{ flex: "1" }}>
+        <Box
+          sx={{ flex: "1", display: "flex", flexDirection: "column", gap: 2 }}
+        >
           <Typography variant="body1">À propos de moi</Typography>
           <Box sx={{ flex: "1", marginRight: "32px" }}>
             <Typography variant="h2">À propos de moi</Typography>
