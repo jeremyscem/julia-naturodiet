@@ -2,12 +2,42 @@
 import { testimonials } from "@/staticData/testimonials";
 import { colors } from "@/theme/colors";
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
+import Image from "next/image";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
+  padding-left: 64px;
+  margin-right: -64px;
+  margin-left: -64px;
+  padding-right: 64px;
+  padding-bottom: 102px;
+
+  .swiper-pagination-bullets {
+    width: auto;
+    left: 64px;
+    bottom: 50px;
+  }
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: ${colors.black};
+  }
+  .button-next,
+  .button-prev {
+    bottom: 24px;
+  }
+  .button-prev {
+    right: 56px;
+  }
+  .button-next {
+    right: 0;
+  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -19,6 +49,8 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   border-radius: 40px;
   box-shadow: 0px 12px 16px -4px rgba(0, 0, 0, 0.08),
     0px 4px 6px -2px rgba(0, 0, 0, 0.03);
+  max-width: 416px;
+  box-sizing: border-box;
 `;
 const Testimonials = () => {
   return (
@@ -28,6 +60,7 @@ const Testimonials = () => {
         display: "flex",
         flexDirection: "column",
         gap: 10,
+        overflow: "hidden",
       }}
     >
       <Box sx={{ display: "flex", width: "100%" }}>
@@ -42,17 +75,38 @@ const Testimonials = () => {
       </Box>
 
       <StyledSwiper
-        spaceBetween={0}
+        modules={[Pagination, Navigation]}
+        pagination={{ clickable: true }}
+        navigation={{ prevEl: ".button-prev", nextEl: ".button-next" }}
+        spaceBetween={32}
         slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {testimonials.map((item) => (
           <StyledSwiperSlide key={item.id}>
-            <Typography variant="body1">{item.text}</Typography>
-            <Typography variant="body2">{item.name}</Typography>
+            <Typography variant="body1" sx={{ fontWeight: "800" }}>
+              {item.text}
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: "400" }}>
+              {item.name}
+            </Typography>
           </StyledSwiperSlide>
         ))}
+        <IconButton className="button-prev" sx={{ position: "absolute" }}>
+          <Image
+            src="/icons/left.svg"
+            width={48}
+            height={48}
+            alt="prev button"
+          />
+        </IconButton>
+        <IconButton className="button-next" sx={{ position: "absolute" }}>
+          <Image
+            src="/icons/right.svg"
+            width={48}
+            height={48}
+            alt="prev button"
+          />
+        </IconButton>
       </StyledSwiper>
     </Box>
   );
