@@ -1,4 +1,5 @@
 import AboutMe from "@/Layout/AboutMe/AboutMe";
+import BookAnAppointment from "@/Layout/BookAnAppointment/BookAnAppointment";
 import HeroSection from "@/Layout/Hero/HeroSection";
 import MyServices from "@/Layout/MyServices/MyServices";
 import Testimonials from "@/Layout/Testimonials/Testimonials";
@@ -24,6 +25,7 @@ export default async function Home() {
       <MyServices />
       <AboutMe />
       <Testimonials />
+      <BookAnAppointment />
     </main>
   );
 }
