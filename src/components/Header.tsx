@@ -49,7 +49,7 @@ const Header = () => {
               </ListItem>
             ))}
           </List>
-          <Button variant="contained" color="primary">
+          <Button sx={{ height: "40px" }} variant="contained" color="primary">
             Book a Consultation
           </Button>
         </Box>
