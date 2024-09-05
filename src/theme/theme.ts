@@ -81,8 +81,17 @@ const theme = createTheme({
                   },
               ],
               
-        }
-    }
+        },
+        MuiAccordionDetails: {
+            styleOverrides: {
+              root: {
+                paddingTop:"0",
+                paddingBottom:"24px",
+              },
+            },
+          },
+    },
+    
 });
   
   export default theme;

@@ -5,5 +5,6 @@ export const colors={
     black: '#000000',
     white: '#ffffff',
     neutralLightest:"#EEEEEE",
-    neutral:"#F5EBE0"
+    neutral:"#F5EBE0",
+    lightPink:"#E6C1B7"
 }
