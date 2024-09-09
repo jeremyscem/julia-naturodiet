@@ -70,7 +70,7 @@ const Faq = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "250px",
+          top: "100px",
           right: "0",
           height: "100%",
           width: "420px",
