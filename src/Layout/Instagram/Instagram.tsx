@@ -1,10 +1,13 @@
+"use client";
 import { instagram } from "@/staticData/instagram";
 import { colors } from "@/theme/colors";
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Instagram = () => {
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -42,24 +45,39 @@ const Instagram = () => {
       </Box>
       <Box sx={{ display: "flex", flexWrap: "nowrap" }}>
         {instagram.map((item, i) => (
-          <Box sx={{ display: "flex" }} key={i}>
-            <a
-              style={{
-                width: "100px",
-                height: "100px",
-                position: "relative",
+          <Box
+            sx={{
+              display: "flex",
+              width: "240px",
+              height: "300px",
+              position: "relative",
+            }}
+            key={i}
+          >
+            <Image src={item.imageUrl} alt={item.alt} fill objectFit="cover" />
+            <IconButton
+              onClick={() => router.push(item.link)}
+              sx={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                backgroundColor: colors.neutral,
+                borderRadius: "100px",
+                width: "44px",
+                height: "44px",
+                "&:hover": {
+                  opacity: 0.8,
+                  backgroundColor: colors.neutral,
+                },
               }}
-              rel="noreferrer noopener"
-              target="_blank"
-              href={item.link}
             >
               <Image
-                src={item.imageUrl}
-                alt={item.alt}
-                fill
-                objectFit="cover"
+                src="/icons/instagram.svg"
+                alt="Instagram Icon"
+                width={24}
+                height={24}
               />
-            </a>
+            </IconButton>
           </Box>
         ))}
       </Box>
