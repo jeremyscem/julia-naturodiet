@@ -22,12 +22,11 @@ const ContactUs = () => {
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "template_2vypad8", // Replace with your EmailJS template ID
-        data, // Form data to send
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
-      )
+      .send("service_s5o3x2y", "template_z15h6xl", {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      })
       .then((result) => {
         console.log("Email successfully sent!", result.text);
       })
