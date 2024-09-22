@@ -1,5 +1,6 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { colors } from "@/theme/colors";
+import { Box, Button, Typography } from "@mui/material";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,9 +18,10 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Inputs>();
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     emailjs
       .send("service_s5o3x2y", "template_z15h6xl", {
@@ -40,6 +42,7 @@ const ContactUs = () => {
         padding: "112px 64px",
         display: "flex",
         justifyContent: "space-between",
+        gap: 4,
       }}
     >
       <Box
@@ -58,50 +61,120 @@ const ContactUs = () => {
           consectetur
         </Typography>
         <Box>
-          <Box>
-            <Image src="/images/phone.png" alt="phone" width={20} height={20} />
-            <Link href="tel:+1234567890">+1234567890</Link>
-          </Box>
-          <Box>
-            <Image src="/images/phone.png" alt="phone" width={20} height={20} />
-            <Link href="tel:+1234567890">+1234567890</Link>
-          </Box>
-          <Box>
-            <Image src="/images/phone.png" alt="phone" width={20} height={20} />
-            <Link href="tel:+1234567890">+1234567890</Link>
-          </Box>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              defaultValue="test"
-              {...register("name", { required: true })}
+          <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <Image
+              src="/icons/envelope.svg"
+              alt="phone"
+              width={24}
+              height={24}
             />
-            {errors.name && <span>This field is required</span>}
-            <input {...register("email", { required: true })} />
-            {errors.email && <span>This field is required</span>}
+            <Link
+              style={{ textDecoration: "none", color: colors.black }}
+              href="mailto:julianaturodiet@gmail.com"
+            >
+              <Typography fontWeight={400} variant="body2">
+                julianaturodiet@gmail.com
+              </Typography>
+            </Link>
+          </Box>
+          <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <Image src="/icons/phone.svg" alt="phone" width={24} height={24} />
+            <Link
+              style={{ textDecoration: "none", color: colors.black }}
+              href="tel:+972522630384"
+            >
+              <Typography fontWeight={400} variant="body2">
+                +972522630384
+              </Typography>
+            </Link>
+          </Box>
+          <Box sx={{ display: "flex", gap: 2, alignItems: "center" }} mb={4}>
+            <Image
+              src="/icons/instagramIcon.svg"
+              alt="phone"
+              width={24}
+              height={24}
+            />
+            <a
+              style={{ textDecoration: "none", color: colors.black }}
+              href="https://www.instagram.com/julia_naturodiet/"
+            >
+              <Typography fontWeight={400} variant="body2">
+                Follow my tips on Instagram
+              </Typography>
+            </a>
+          </Box>
+          <form
+            style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <label htmlFor="name">Name</label>
+              <input
+                placeholder="Name"
+                style={{
+                  backgroundColor: "#E3D5CA",
+                  borderRadius: "12px",
+                  borderColor: colors.neutral,
+                  height: "48px",
+                  padding: "0 12px",
+                }}
+                defaultValue="test"
+                {...register("name", { required: true })}
+              />
+              {errors.name && <span color="red">This field is required</span>}
+            </Box>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <label htmlFor="email">Email</label>
+              <input
+                placeholder="Email"
+                style={{
+                  backgroundColor: "#E3D5CA",
+                  borderRadius: "12px",
+                  borderColor: colors.neutral,
+                  height: "48px",
+                  padding: "0 12px",
+                }}
+                {...register("email", { required: true })}
+              />
+              {errors.email && <span color="red">This field is required</span>}
+            </Box>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <label htmlFor="message">Message</label>
+              <textarea
+                placeholder="Message"
+                style={{
+                  backgroundColor: "#E3D5CA",
+                  borderRadius: "12px",
+                  borderColor: colors.neutral,
+                  minHeight: "180px",
+                  padding: "12px 12px",
+                }}
+                {...register("message", { required: true })}
+              />
+            </Box>
+            {errors.message && <span color="red">This field is required</span>}
 
-            <textarea {...register("message", { required: true })} />
-            {errors.message && <span>This field is required</span>}
-            <input type="submit" />
+            <Button
+              disabled={isSubmitting}
+              type="submit"
+              sx={{ width: "103px" }}
+              variant="contained"
+            >
+              Submit
+            </Button>
+            {isSubmitSuccessful && <p>Thank you for your message!</p>}
           </form>
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          maxWidth: "700px",
-        }}
-        mb={10}
-      >
-        <Typography variant="h2">Contact Us</Typography>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique. Lorem ipsum dolor sit amet,
-          consectetur
-        </Typography>
-        <Box></Box>
-      </Box>
+
+      <Image
+        style={{ aspectRatio: 643 / 838 }}
+        src="/juliaPortrait.svg"
+        width={643}
+        height={838}
+        alt="logo julia naturodiet"
+      />
     </Box>
   );
 };
