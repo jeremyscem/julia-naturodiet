@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import AboutMe from "@/Layout/AboutMe/AboutMe";
 import BookAnAppointment from "@/Layout/BookAnAppointment/BookAnAppointment";
 import ContactUs from "@/Layout/ContactUs/ContactUs";
@@ -19,6 +20,7 @@ export default async function Home() {
       <Faq />
       <Instagram />
       <ContactUs />
+      <Footer />
     </main>
   );
 }

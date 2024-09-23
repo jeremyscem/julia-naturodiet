@@ -1,5 +1,5 @@
 import { colors } from "@/theme/colors";
-import { headerLinks } from "@/utils/headerLinks";
+import { navigationLinks } from "@/utils/headerLinks";
 import { AppBar, Box, Button, List, ListItem } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +38,7 @@ const Header = () => {
               marginRight: "16px",
             }}
           >
-            {headerLinks.map((link, index) => (
+            {navigationLinks.map((link, index) => (
               <ListItem sx={{ width: "auto", fontSize: "16px" }} key={index}>
                 <Link
                   style={{ color: colors.black, textDecoration: "none" }}

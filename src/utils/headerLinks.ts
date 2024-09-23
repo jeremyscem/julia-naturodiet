@@ -1,4 +1,4 @@
-export const headerLinks = [
+export const navigationLinks = [
     {
         name: "About",
         link: "/",
