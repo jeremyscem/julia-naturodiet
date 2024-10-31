@@ -13,6 +13,10 @@ const Header = () => {
         display: "flex",
         justifyContent: "center",
         boxShadow: "none",
+
+        "@media (max-width: 768px)": {
+          display: "none",
+        },
       }}
     >
       <Box

@@ -1,10 +1,17 @@
+"use client";
 import { services } from "@/staticData/services";
 import { colors } from "@/theme/colors";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 
 const ServicesDetails = () => {
+  const [isDesktopDevice, setIsDesktopDevice] = useState(false);
+  useEffect(() => {
+    setIsDesktopDevice(isDesktop);
+  }, []);
   return (
     <Box
       sx={{
@@ -13,6 +20,10 @@ const ServicesDetails = () => {
         gap: "40px",
         justifyContent: "space-between",
         position: "relative",
+
+        "@media (max-width: 768px)": {
+          flexDirection: "column",
+        },
       }}
     >
       <Box
@@ -25,14 +36,36 @@ const ServicesDetails = () => {
           zIndex: 1,
           boxShadow:
             "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
+
+          "@media (max-width: 768px)": {
+            width: "100%",
+            borderRadius: "16px",
+          },
         }}
       >
-        <Image
-          src={services[0].imageUrl}
-          width={640}
-          height={360}
-          alt={services[0].name}
-        />
+        {isDesktopDevice ? (
+          <Image
+            style={{
+              flexGrow: 1,
+            }}
+            src={services[0].imageUrl}
+            width={640}
+            height={360}
+            alt={services[0].name}
+          />
+        ) : (
+          <Box sx={{ width: "100%", position: "relative", height: "187px" }}>
+            <Image
+              style={{
+                flexGrow: 1,
+              }}
+              src={services[0].imageUrl}
+              objectFit="cover"
+              fill
+              alt={services[0].name}
+            />
+          </Box>
+        )}
         <Box
           sx={{
             padding: "48px",
@@ -68,6 +101,10 @@ const ServicesDetails = () => {
           display: "flex",
           flexDirection: "column",
           gap: "32px",
+
+          "@media (max-width: 768px)": {
+            width: "100%",
+          },
         }}
       >
         {services.slice(1).map((service) => (
@@ -80,6 +117,11 @@ const ServicesDetails = () => {
               borderRadius: "40px",
               boxShadow:
                 "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
+              "@media (max-width: 768px)": {
+                flexDirection: "column-reverse",
+                width: "100%",
+                borderRadius: "16px",
+              },
             }}
             key={service.name}
           >
@@ -88,7 +130,6 @@ const ServicesDetails = () => {
                 padding: "24px",
                 backgroundColor: colors.white,
                 display: "flex",
-
                 flexGrow: 1,
                 flexDirection: "column",
                 justifyContent: "center",
@@ -113,15 +154,32 @@ const ServicesDetails = () => {
                 </Link>
               </Typography>
             </Box>
-            <Image
-              style={{
-                flexGrow: 1,
-              }}
-              src={service.imageUrl}
-              width={320}
-              height={368}
-              alt={service.name}
-            />
+
+            {isDesktopDevice ? (
+              <Image
+                style={{
+                  flexGrow: 1,
+                }}
+                src={service.imageUrl}
+                width={320}
+                height={368}
+                alt={service.name}
+              />
+            ) : (
+              <Box
+                sx={{ width: "100%", position: "relative", height: "187px" }}
+              >
+                <Image
+                  style={{
+                    flexGrow: 1,
+                  }}
+                  src={service.imageUrl}
+                  objectFit="cover"
+                  fill
+                  alt={service.name}
+                />
+              </Box>
+            )}
           </Box>
         ))}
       </Box>

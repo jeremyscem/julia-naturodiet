@@ -61,6 +61,7 @@ const Testimonials = () => {
         flexDirection: "column",
         gap: 10,
         overflow: "hidden",
+        "@media (max-width: 768px)": { padding: "112px 16px" },
       }}
     >
       <Box sx={{ display: "flex", width: "100%" }}>
@@ -79,7 +80,14 @@ const Testimonials = () => {
         pagination={{ clickable: true }}
         navigation={{ prevEl: ".button-prev", nextEl: ".button-next" }}
         spaceBetween={32}
-        slidesPerView={3}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {testimonials.map((item) => (
           <StyledSwiperSlide key={item.id}>

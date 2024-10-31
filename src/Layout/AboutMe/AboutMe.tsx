@@ -9,9 +9,17 @@ const AboutMe = () => {
         display: "flex",
         flexDirection: "column",
         gap: 10,
+        "@media (max-width: 768px)": { padding: "112px 16px" },
       }}
     >
-      <Box sx={{ display: "flex", width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+
+          "@media (max-width: 768px)": { flexDirection: "column" },
+        }}
+      >
         <Box
           sx={{ flex: "1", display: "flex", flexDirection: "column", gap: 2 }}
         >
@@ -54,6 +62,10 @@ const AboutMe = () => {
           height: "510px",
           boxShadow:
             "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
+
+          "@media (max-width: 768px)": {
+            boxShadow: "none",
+          },
         }}
       >
         <Image
