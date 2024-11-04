@@ -5,13 +5,20 @@ import { Box, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 
 const Instagram = () => {
   const router = useRouter();
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   return (
     <Box
       sx={{
-        padding: "112px 64px",
+        padding: isClientDesktop ? "112px 64px" : "112px 16px",
         display: "flex",
         flexDirection: "column",
         position: "relative",

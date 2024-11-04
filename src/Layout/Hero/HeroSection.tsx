@@ -4,8 +4,15 @@ import { Video } from "@/common/Video";
 import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 
 const HeroSection = () => {
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   return (
     <Box sx={{ position: "relative", width: "100%", height: "100vh" }}>
       <Image
@@ -33,13 +40,13 @@ const HeroSection = () => {
           top: "20%",
           left: "10%",
           borderRadius: "32px",
-          padding: "40px",
+          padding: isClientDesktop ? "40px" : "40px 24px",
           backgroundColor: colors.neutral,
           display: "flex",
           flexDirection: "column",
           gap: "24px",
           alignItems: "flex-start",
-          maxWidth: "645px",
+          maxWidth: isClientDesktop ? "645px" : "100%",
           zIndex: 2,
           filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.16))",
         }}
@@ -53,7 +60,13 @@ const HeroSection = () => {
           and well-being. Discover a natural path to a healthier, more balanced
           life.
         </Typography>
-        <Box sx={{ display: "flex", gap: "16px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "16px",
+            flexDirection: isClientDesktop ? "row" : "column",
+          }}
+        >
           <Button
             variant="contained"
             color="primary"

@@ -15,6 +15,9 @@ const theme = createTheme({
       h1: {
           fontSize:"56px",
           fontWeight:"900",
+          "@media (max-width: 768px)": {
+            fontSize:"40px",
+          },
       },
       h2: {
           fontSize:"48px",

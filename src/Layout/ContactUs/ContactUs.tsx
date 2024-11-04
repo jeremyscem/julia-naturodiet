@@ -4,7 +4,8 @@ import { Box, Button, Typography } from "@mui/material";
 import emailjs from "emailjs-com";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type Inputs = {
@@ -13,6 +14,12 @@ type Inputs = {
   message: string;
 };
 const ContactUs = () => {
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
+
   useEffect(() => emailjs.init("K6snhHQUgNHtXMCHu"), []);
 
   const {
@@ -39,10 +46,11 @@ const ContactUs = () => {
   return (
     <Box
       sx={{
-        padding: "112px 64px",
+        padding: isClientDesktop ? "112px 64px" : "112px 16px",
         display: "flex",
         justifyContent: "space-between",
         gap: 4,
+        flexDirection: isClientDesktop ? "row" : "column-reverse",
       }}
     >
       <Box
@@ -169,10 +177,10 @@ const ContactUs = () => {
       </Box>
 
       <Image
-        style={{ aspectRatio: 643 / 838 }}
+        style={isClientDesktop ? { aspectRatio: 643 / 838 } : {}}
         src="/juliaPortrait.svg"
-        width={643}
-        height={838}
+        width={isClientDesktop ? 643 : 293}
+        height={isClientDesktop ? 838 : 335}
         alt="logo julia naturodiet"
       />
     </Box>

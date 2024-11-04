@@ -9,18 +9,24 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 import ArrowIcon from "../../../public/icons/ArrowIcon";
 
 const Faq = () => {
   const [expanded, setExpanded] = useState<string | false>("faq0");
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   const toggleAccordion = (i: number) => () => {
     setExpanded(`faq${i}` === expanded ? false : `faq${i}`);
   };
   return (
     <Box
       sx={{
-        padding: "112px 64px",
+        padding: isClientDesktop ? "112px 64px" : "112px 16px",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
@@ -37,6 +43,7 @@ const Faq = () => {
           gap: "20px",
           maxWidth: "858px",
         }}
+        mb={isClientDesktop ? 0 : 6}
       >
         {faq.map((item, i) => (
           <Box key={item.id}>
@@ -68,27 +75,35 @@ const Faq = () => {
         ))}
       </Box>
       <Box
-        sx={{
-          position: "absolute",
-          top: "100px",
-          right: "0",
-          height: "100%",
-          width: "420px",
-        }}
+        sx={
+          isClientDesktop
+            ? {
+                position: "absolute",
+                top: "100px",
+                right: "0",
+                height: "100%",
+                width: "420px",
+              }
+            : { position: "relative", height: "346px", width: "100%" }
+        }
       >
         <Image
-          style={{ position: "absolute" }}
-          src={"/faq/Vector.svg"}
+          style={
+            isClientDesktop
+              ? { position: "absolute" }
+              : { position: "absolute", right: 0 }
+          }
+          src={isClientDesktop ? "/faq/Vector.svg" : "/faq/VectorMobile.svg"}
           alt="Vector"
-          width={420}
-          height={437}
+          width={isClientDesktop ? 420 : 284}
+          height={isClientDesktop ? 437 : 294}
         />
         <Image
           style={{ position: "absolute", top: "100px", left: "70px" }}
           src={"/faq/products.svg"}
           alt="Vector"
-          width={285}
-          height={365}
+          width={isClientDesktop ? 285 : 191}
+          height={isClientDesktop ? 365 : 246}
         />
       </Box>
     </Box>
