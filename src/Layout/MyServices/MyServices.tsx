@@ -68,7 +68,10 @@ const MyServices = () => {
             Description Description Description Description{" "}
           </Typography>
           <Button
-            sx={{ width: "137px", whiteSpace: "nowrap" }}
+            sx={{
+              width: isDesktopDevice ? "137px" : "100%",
+              whiteSpace: "nowrap",
+            }}
             variant="contained"
             color="primary"
           >

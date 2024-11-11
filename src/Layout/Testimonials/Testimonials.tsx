@@ -38,6 +38,15 @@ const StyledSwiper = styled(Swiper)`
   .button-next {
     right: 0;
   }
+
+  @media (max-width: 768px) {
+    .button-prev {
+      right: 115px;
+    }
+    .button-next {
+      right: 50px;
+    }
+  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -51,6 +60,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     0px 4px 6px -2px rgba(0, 0, 0, 0.03);
   max-width: 416px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    border-radius: 16px;
+    padding: 24px;
+  }
 `;
 const Testimonials = () => {
   return (

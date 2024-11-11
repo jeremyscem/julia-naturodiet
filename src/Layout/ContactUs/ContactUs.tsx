@@ -166,7 +166,7 @@ const ContactUs = () => {
             <Button
               disabled={isSubmitting}
               type="submit"
-              sx={{ width: "103px" }}
+              sx={{ width: isClientDesktop ? "103px" : "100%" }}
               variant="contained"
             >
               Submit

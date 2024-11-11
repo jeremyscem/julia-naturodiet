@@ -53,7 +53,7 @@ const BookAnAppointment = () => {
           flexDirection: "column",
           gap: 3,
           alignItems: "center",
-          padding: isClientDesktop ? "112px 64px" : "56px 16px",
+          padding: isClientDesktop ? "112px 64px" : "56px 24px 80px 16px",
           backgroundColor: colors.chinaRose,
           borderTopRightRadius: isClientDesktop ? "500px" : "100px",
           borderBottomRightRadius: isClientDesktop ? "16px" : "24px",

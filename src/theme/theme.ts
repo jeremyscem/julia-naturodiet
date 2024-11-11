@@ -22,10 +22,16 @@ const theme = createTheme({
       h2: {
           fontSize:"48px",
           fontWeight:"700",
+          "@media (max-width: 768px)": {
+            fontSize:"36px",
+          },
       },
       h3: {
           fontSize:"40px",
           fontWeight:"700",
+          "@media (max-width: 768px)": {
+            fontSize:"32px",
+          },
       },
       h4: {
           fontSize:"32px",
@@ -42,6 +48,9 @@ const theme = createTheme({
       body1: {
           fontSize:"18px",
           fontWeight:"400",
+          "@media (max-width: 768px)": {
+            fontSize:"16px",
+          },
         },
         body2: {
           fontSize:"16px",

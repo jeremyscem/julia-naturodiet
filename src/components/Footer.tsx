@@ -1,12 +1,25 @@
+"use client";
 import { colors } from "@/theme/colors";
 import { navigationLinks } from "@/utils/headerLinks";
 import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
 
 const Footer = () => {
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   return (
-    <Box sx={{ backgroundColor: colors.chinaRose, padding: "80px 64px" }}>
+    <Box
+      sx={{
+        backgroundColor: colors.chinaRose,
+        padding: isClientDesktop ? "80px 64px" : "48px 16px",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -14,6 +27,7 @@ const Footer = () => {
           alignItems: "center",
           borderBottom: `1px solid ${colors.tertiary}`,
           paddingBottom: "80px",
+          flexDirection: isClientDesktop ? "row" : "column",
         }}
       >
         <Image
@@ -22,7 +36,14 @@ const Footer = () => {
           height={40}
           alt="logo julia"
         />
-        <List sx={{ display: "flex", gap: 2 }}>
+        <List
+          sx={{
+            display: "flex",
+            gap: 2,
+            flexDirection: isClientDesktop ? "row" : "column",
+            alignItems: isClientDesktop ? "flex-start" : "center",
+          }}
+        >
           {navigationLinks.map((item, i) => (
             <Link style={{ textDecoration: "none" }} key={i} href={item.link}>
               <ListItem sx={{ whiteSpace: "nowrap" }}>
