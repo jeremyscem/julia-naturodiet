@@ -1,13 +1,28 @@
-"use client";
-
-import { Video } from "@/common/Video";
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
+import { Video } from "common/Video";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
+import { colors } from "theme/colors";
 
 const HeroSection = () => {
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   return (
-    <Box sx={{ position: "relative", width: "100%", height: "100vh" }}>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <Image
         src="/companyLogo.svg"
         width={126}
@@ -29,31 +44,46 @@ const HeroSection = () => {
       </Box>
       <Box
         sx={{
-          position: "absolute",
-          top: "20%",
-          left: "10%",
+          position: isClientDesktop ? "absolute" : "relative",
+          top: isClientDesktop ? "20%" : "0",
+          left: isClientDesktop ? "10%" : "0",
           borderRadius: "32px",
-          padding: "40px",
+          padding: isClientDesktop ? "40px" : "24px",
           backgroundColor: colors.neutral,
           display: "flex",
           flexDirection: "column",
           gap: "24px",
           alignItems: "flex-start",
-          maxWidth: "645px",
+          maxWidth: isClientDesktop ? "645px" : "100%",
+          width: isClientDesktop ? "fit-content" : "calc(100% - 102px)",
           zIndex: 2,
           filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.16))",
+          overflow: "hidden", // Ensure no overflow in mobile view
         }}
       >
-        <Typography sx={{ paddingInlineEnd: "56px" }} variant="h1">
+        <Typography
+          sx={{ paddingInlineEnd: isClientDesktop ? "56px" : "0" }}
+          variant="h1"
+        >
           Reclaim Your Vitality with Naturopathic Care
         </Typography>
-        <Typography sx={{ paddingInlineEnd: "40px" }} variant="body1">
+        <Typography
+          sx={{ paddingInlineEnd: isClientDesktop ? "40px" : "0" }}
+          variant="body1"
+        >
           Julia Scemama&#39;s naturopathic approach addresses the root causes of
           your discomfort, offering personalized treatments that promote healing
           and well-being. Discover a natural path to a healthier, more balanced
           life.
         </Typography>
-        <Box sx={{ display: "flex", gap: "16px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "16px",
+            flexDirection: isClientDesktop ? "row" : "column",
+            width: isClientDesktop ? "fit-content" : "100%",
+          }}
+        >
           <Button
             variant="contained"
             color="primary"

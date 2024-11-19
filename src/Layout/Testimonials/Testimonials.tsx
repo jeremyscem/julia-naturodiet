@@ -1,14 +1,13 @@
-"use client";
-import { testimonials } from "@/staticData/testimonials";
-import { colors } from "@/theme/colors";
 import styled from "@emotion/styled";
 import { Box, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
+import { testimonials } from "staticData/testimonials";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { colors } from "theme/colors";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
@@ -38,6 +37,15 @@ const StyledSwiper = styled(Swiper)`
   .button-next {
     right: 0;
   }
+
+  @media (max-width: 768px) {
+    .button-prev {
+      right: 115px;
+    }
+    .button-next {
+      right: 50px;
+    }
+  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -51,6 +59,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     0px 4px 6px -2px rgba(0, 0, 0, 0.03);
   max-width: 416px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    border-radius: 16px;
+    padding: 24px;
+  }
 `;
 const Testimonials = () => {
   return (
@@ -61,6 +74,7 @@ const Testimonials = () => {
         flexDirection: "column",
         gap: 10,
         overflow: "hidden",
+        "@media (max-width: 768px)": { padding: "112px 16px" },
       }}
     >
       <Box sx={{ display: "flex", width: "100%" }}>
@@ -79,7 +93,14 @@ const Testimonials = () => {
         pagination={{ clickable: true }}
         navigation={{ prevEl: ".button-prev", nextEl: ".button-next" }}
         spaceBetween={32}
-        slidesPerView={3}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {testimonials.map((item) => (
           <StyledSwiperSlide key={item.id}>

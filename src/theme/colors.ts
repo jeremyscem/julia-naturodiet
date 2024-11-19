@@ -6,5 +6,6 @@ export const colors={
     white: '#ffffff',
     neutralLightest:"#EEEEEE",
     neutral:"#F5EBE0",
-    lightPink:"#E6C1B7"
+    lightPink:"#E6C1B7",
+    tertiary:"#E3D5CA",
 }

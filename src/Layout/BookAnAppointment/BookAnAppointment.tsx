@@ -1,35 +1,64 @@
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { isDesktop } from "react-device-detect";
+import { colors } from "theme/colors";
 
 const BookAnAppointment = () => {
+  const [isClientDesktop, setIsClientDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsClientDesktop(isDesktop);
+  }, []);
   return (
-    <Box sx={{ position: "relative" }}>
-      <Image
-        style={{
-          position: "absolute",
-          top: "100px",
-          left: "-60px",
-          zIndex: 1,
-        }}
-        src="/bookAnAppointment/flower.svg"
-        alt="book an appointment"
-        width={375}
-        height={582}
-      />
+    <Box
+      sx={
+        isClientDesktop
+          ? { position: "relative" }
+          : { position: "relative", padding: "0 24px" }
+      }
+    >
+      {isClientDesktop ? (
+        <Image
+          style={{
+            position: "absolute",
+            top: "100px",
+            left: "-60px",
+            zIndex: 1,
+          }}
+          src="/bookAnAppointment/flower.svg"
+          alt="book an appointment"
+          width={375}
+          height={582}
+        />
+      ) : (
+        <Image
+          style={{
+            position: "absolute",
+            top: "-150px",
+            left: "-40px",
+            zIndex: 1,
+          }}
+          src="/bookAnAppointment/flowerMobile.svg"
+          alt="book an appointment"
+          width={200}
+          height={180}
+        />
+      )}
+
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: 3,
           alignItems: "center",
-          padding: "112px 64px",
+          padding: isClientDesktop ? "112px 64px" : "56px 24px 80px 16px",
           backgroundColor: colors.chinaRose,
-          borderTopRightRadius: "500px",
-          borderBottomRightRadius: "16px",
-          borderTopLeftRadius: "16px",
-          borderBottomLeftRadius: "500px",
-          width: "85%",
+          borderTopRightRadius: isClientDesktop ? "500px" : "100px",
+          borderBottomRightRadius: isClientDesktop ? "16px" : "24px",
+          borderTopLeftRadius: isClientDesktop ? "16px" : "24px",
+          borderBottomLeftRadius: isClientDesktop ? "500px" : "24px",
+          width: isClientDesktop ? "85%" : "auto",
           margin: "0 auto",
         }}
       >
