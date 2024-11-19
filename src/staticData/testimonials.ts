@@ -1,4 +1,5 @@
-import { TestimonialsType } from "@/utils/types/homePagetypes";
+import { TestimonialsType } from "utils/types/homePagetypes";
+
 
 export const testimonials:TestimonialsType[] = [
     {

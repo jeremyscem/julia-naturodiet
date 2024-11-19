@@ -1,6 +1,3 @@
-"use client";
-import { faq } from "@/staticData/faq";
-import { colors } from "@/theme/colors";
 import {
   Accordion,
   AccordionDetails,
@@ -11,6 +8,8 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { faq } from "staticData/faq";
+import { colors } from "theme/colors";
 import ArrowIcon from "../../../public/icons/ArrowIcon";
 
 const Faq = () => {

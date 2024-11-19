@@ -1,12 +1,11 @@
-"use client";
-import { instagram } from "@/staticData/instagram";
-import { colors } from "@/theme/colors";
 import { Box, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { instagram } from "staticData/instagram";
+import { colors } from "theme/colors";
 
 const Instagram = () => {
   const router = useRouter();

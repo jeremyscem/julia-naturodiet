@@ -1,15 +1,15 @@
 export const navigationLinks = [
     {
         name: "About",
-        link: "/",
-    },
-    {
-        name: "My Services",
         link: "/about",
     },
     {
+        name: "My Services",
+        link: "/myservices",
+    },
+    {
         name: "Blog",
-        link: "/contact",
+        link: "/blog",
     },
     {
         name: "Contact",

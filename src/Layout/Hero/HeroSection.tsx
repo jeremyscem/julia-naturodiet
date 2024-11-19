@@ -1,11 +1,9 @@
-"use client";
-
-import { Video } from "@/common/Video";
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
+import { Video } from "common/Video";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { colors } from "theme/colors";
 
 const HeroSection = () => {
   const [isClientDesktop, setIsClientDesktop] = useState(false);

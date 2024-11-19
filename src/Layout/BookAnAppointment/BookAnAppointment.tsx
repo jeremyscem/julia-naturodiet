@@ -1,9 +1,8 @@
-"use client";
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { colors } from "theme/colors";
 
 const BookAnAppointment = () => {
   const [isClientDesktop, setIsClientDesktop] = useState(false);

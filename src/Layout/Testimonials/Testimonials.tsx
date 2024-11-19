@@ -1,14 +1,13 @@
-"use client";
-import { testimonials } from "@/staticData/testimonials";
-import { colors } from "@/theme/colors";
 import styled from "@emotion/styled";
 import { Box, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
+import { testimonials } from "staticData/testimonials";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { colors } from "theme/colors";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;

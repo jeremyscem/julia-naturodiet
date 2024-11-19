@@ -1,11 +1,12 @@
 "use client";
-import { services } from "@/staticData/services";
-import { colors } from "@/theme/colors";
+
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { services } from "staticData/services";
+import { colors } from "theme/colors";
 
 const ServicesDetails = () => {
   const [isDesktopDevice, setIsDesktopDevice] = useState(false);

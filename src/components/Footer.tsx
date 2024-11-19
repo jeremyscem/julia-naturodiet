@@ -1,11 +1,10 @@
-"use client";
-import { colors } from "@/theme/colors";
-import { navigationLinks } from "@/utils/headerLinks";
 import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
+import { colors } from "theme/colors";
+import { navigationLinks } from "utils/headerLinks";
 
 const Footer = () => {
   const [isClientDesktop, setIsClientDesktop] = useState(false);

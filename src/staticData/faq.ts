@@ -1,4 +1,5 @@
-import { FaqType } from "@/utils/types/homePagetypes";
+import { FaqType } from "utils/types/homePagetypes";
+
 
 export const faq:FaqType[] = [
     {

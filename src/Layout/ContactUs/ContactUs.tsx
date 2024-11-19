@@ -1,5 +1,3 @@
-"use client";
-import { colors } from "@/theme/colors";
 import { Box, Button, Typography } from "@mui/material";
 import emailjs from "emailjs-com";
 import Image from "next/image";
@@ -7,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { colors } from "theme/colors";
 
 type Inputs = {
   name: string;
