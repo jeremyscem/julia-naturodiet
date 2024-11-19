@@ -10,6 +10,16 @@ import theme from "../theme/theme";
 export const metadata: Metadata = {
   title: "Julia Naturodiet",
   description: "Julia Naturodiet, votre conseillère nutritionnelle ",
+  keywords: [
+    "naturopathe",
+    "régime",
+    "coach en nutrition",
+    "nutrition",
+    "coach régime",
+    "recettes",
+    "manger sain",
+    "healthy",
+  ],
   icons: {
     icon: "/companyLogo.svg",
   },

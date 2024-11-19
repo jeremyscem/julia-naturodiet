@@ -41,6 +41,7 @@ const MyServices = () => {
         sx={{
           display: "flex",
           width: "100%",
+          alignItems: "center",
           "@media (max-width: 768px)": { flexDirection: "column" },
         }}
       >
@@ -49,7 +50,9 @@ const MyServices = () => {
         >
           <Typography variant="body1">Mes différents services</Typography>
           <Box sx={{ flex: "1", marginRight: "32px" }}>
-            <Typography variant="h2">Mes différents services</Typography>
+            <Typography variant="h2">
+              Rééquilibrez Votre Alimentation pour un Bien-Être Durable
+            </Typography>
           </Box>
         </Box>
         <Box
@@ -61,10 +64,8 @@ const MyServices = () => {
           }}
         >
           <Typography variant="body1">
-            Description Description Description Description Description
-            Description Description Description Description Description
-            Description Description Description Description Description
-            Description Description Description Description{" "}
+            Atteignez vos objectifs de santé en rééquilibrant votre alimentation
+            grâce à un accompagnement personnalisé et bienveillant
           </Typography>
           <Button
             sx={{
