@@ -10,16 +10,16 @@ export const services:ServicesType[] = [{
     "url": "/myservices"
 },{
     "isPrincipal": false,
-    "name": "Coaching Personnalisé via WhatsApp",
-    "title": "Transformez Votre Alimentation avec un suivi personnalisé et sur mesure 5j/7",
-    "description": "Atteignez vos objectifs avec un programme nutritionnel adapté et un accompagnement motivant via WhatsApp, transformez vos habitudes alimentaires et atteignez vos objectifs en un mois, tout en restant soutenu à chaque étape !",
-    "imageUrl": "/services/service1.png",
+    "name": "Suivi Personnalisé via WhatsApp",
+    "title": "Transformez votre alimentation avec un suivi personnalisé 5j/7 !",
+    "description": "Atteignez vos objectifs grâce à un programme nutritionnel sur mesure et un accompagnement motivant via WhatsApp. Changez vos habitudes en un mois, avec un soutien à chaque étape ",
+    "imageUrl": "/services/service2.png",
     "url": "/myservices"
 },{
     "isPrincipal": false,
-    "name": "Suivi Prolongé et Accompagnement Renforcé",
-    "title": "Deux Mois de Coaching pour des Résultats Durables",
-    "description": "Profitez d’un accompagnement sur deux mois avec un programme nutritionnel complet et un soutien continu pour des résultats durables et un bien-être renforcé.",
-    "imageUrl": "/services/service2.png",
+    "name": "Coaching Prolongé, Accompagnement Renforcé",
+    "title": "Deux mois pour des résultats durables.",
+    "description": "Un programme complet et un soutien continu pour transformer vos habitudes et renforcer votre bien-être.",
+    "imageUrl": "/services/service1.png",
     "url": "/myservices"
 }]

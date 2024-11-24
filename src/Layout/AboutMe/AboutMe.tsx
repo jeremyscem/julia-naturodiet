@@ -26,7 +26,16 @@ const AboutMe = () => {
           sx={{ flex: "1", display: "flex", flexDirection: "column", gap: 2 }}
         >
           <Typography variant="body1">À propos de moi</Typography>
-          <Box sx={{ flex: "1", marginRight: "32px" }}>
+          <Box
+            sx={{
+              flex: "1",
+              marginRight: "32px",
+              "@media (max-width: 768px)": {
+                marginRight: "0px",
+                marginBottom: "24px",
+              },
+            }}
+          >
             <Typography variant="h2">
               Découvrez Mon Parcours en Nutrition et Bien-Être
             </Typography>
