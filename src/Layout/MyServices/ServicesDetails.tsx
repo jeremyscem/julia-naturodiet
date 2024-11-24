@@ -113,6 +113,7 @@ const ServicesDetails = () => {
             sx={{
               display: "flex",
               width: "640px",
+              height: isDesktopDevice ? "360px" : "auto",
               backgroundColor: "transparent",
               overflow: "hidden",
               borderRadius: "40px",
@@ -131,7 +132,7 @@ const ServicesDetails = () => {
                 padding: "24px",
                 backgroundColor: colors.white,
                 display: "flex",
-                flexGrow: 1,
+                width: isDesktopDevice ? "50%" : "auto",
                 flexDirection: "column",
                 justifyContent: "center",
               }}
@@ -157,12 +158,14 @@ const ServicesDetails = () => {
             </Box>
 
             {isDesktopDevice ? (
-              <Image
-                src={service.imageUrl}
-                width={320}
-                height={368}
-                alt={service.name}
-              />
+              <Box sx={{ width: "50%", position: "relative", height: "100%" }}>
+                <Image
+                  src={service.imageUrl}
+                  objectFit="cover"
+                  fill
+                  alt={service.name}
+                />
+              </Box>
             ) : (
               <Box
                 sx={{ width: "100%", position: "relative", height: "187px" }}
