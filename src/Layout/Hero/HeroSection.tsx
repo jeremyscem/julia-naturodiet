@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Video } from "common/Video";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
@@ -84,13 +85,28 @@ const HeroSection = () => {
             width: isClientDesktop ? "fit-content" : "100%",
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ paddingRight: "12px" }}
+          <Link
+            style={{
+              textDecoration: "none",
+              paddingRight: "12px",
+              backgroundColor: colors.black,
+              color: colors.white,
+              borderRadius: "12px",
+              height: "48px",
+              fontSize: "16px",
+              fontWeight: "700",
+              padding: "0 24px",
+              fontFamily: "Lora",
+              textTransform: "none",
+              boxShadow: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            href="tel:+972522630384"
           >
             Prendre rendez-vous <span style={{ marginLeft: "14px" }}>&gt;</span>
-          </Button>
+          </Link>
           <Button
             onClick={() => {
               router.push("/myservices");

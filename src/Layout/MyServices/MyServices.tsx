@@ -1,11 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
 import ServicesDetails from "./ServicesDetails";
 
 const MyServices = () => {
   const [isDesktopDevice, setIsDesktopDevice] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     setIsDesktopDevice(isDesktop);
   }, []);
@@ -74,6 +76,9 @@ const MyServices = () => {
             }}
             variant="contained"
             color="primary"
+            onClick={() => {
+              router.push("/myservices");
+            }}
           >
             En savoir plus
           </Button>

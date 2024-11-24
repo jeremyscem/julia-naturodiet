@@ -61,12 +61,8 @@ const ContactUs = () => {
         }}
         mb={10}
       >
-        <Typography variant="h2">Contact Us</Typography>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique. Lorem ipsum dolor sit amet,
-          consectetur
-        </Typography>
+        <Typography variant="h2">Contactez-moi</Typography>
+
         <Box>
           <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
             <Image
@@ -103,11 +99,12 @@ const ContactUs = () => {
               height={24}
             />
             <a
+              target="_blank"
               style={{ textDecoration: "none", color: colors.black }}
               href="https://www.instagram.com/julia_naturodiet/"
             >
               <Typography fontWeight={400} variant="body2">
-                Follow my tips on Instagram
+                Suivez mes conseils sur Instagram
               </Typography>
             </a>
           </Box>
@@ -116,7 +113,7 @@ const ContactUs = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Nom</label>
               <input
                 placeholder="Name"
                 style={{
@@ -126,10 +123,10 @@ const ContactUs = () => {
                   height: "48px",
                   padding: "0 12px",
                 }}
-                defaultValue="test"
+                defaultValue=""
                 {...register("name", { required: true })}
               />
-              {errors.name && <span color="red">This field is required</span>}
+              {errors.name && <span color="red">Ce champ est obligatoire</span>}
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <label htmlFor="email">Email</label>
@@ -144,7 +141,9 @@ const ContactUs = () => {
                 }}
                 {...register("email", { required: true })}
               />
-              {errors.email && <span color="red">This field is required</span>}
+              {errors.email && (
+                <span color="red">Ce champ est obligatoire</span>
+              )}
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <label htmlFor="message">Message</label>
@@ -160,7 +159,9 @@ const ContactUs = () => {
                 {...register("message", { required: true })}
               />
             </Box>
-            {errors.message && <span color="red">This field is required</span>}
+            {errors.message && (
+              <span color="red">Ce champ est obligatoire</span>
+            )}
 
             <Button
               disabled={isSubmitting}
@@ -168,9 +169,9 @@ const ContactUs = () => {
               sx={{ width: isClientDesktop ? "103px" : "100%" }}
               variant="contained"
             >
-              Submit
+              Envoyez
             </Button>
-            {isSubmitSuccessful && <p>Thank you for your message!</p>}
+            {isSubmitSuccessful && <p>Merci pour votre message!</p>}
           </form>
         </Box>
       </Box>
