@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Video } from "common/Video";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -25,12 +24,6 @@ const HeroSection = () => {
         flexDirection: "column",
       }}
     >
-      <Image
-        src="/companyLogo.svg"
-        width={126}
-        height={40}
-        alt="logo julia naturodiet"
-      />
       <Box
         sx={{
           position: "absolute",
@@ -42,7 +35,7 @@ const HeroSection = () => {
           overflow: "hidden",
         }}
       >
-        <Video src="/heroVideo.mov" />
+        <Video src="/heroVideo.mp4" />
       </Box>
       <Box
         sx={{

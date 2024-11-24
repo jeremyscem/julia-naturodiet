@@ -112,7 +112,7 @@ const ServicesDetails = () => {
           <Box
             sx={{
               display: "flex",
-              width: "640px",
+              maxWidth: "640px",
               height: isDesktopDevice ? "360px" : "auto",
               backgroundColor: "transparent",
               overflow: "hidden",

@@ -61,7 +61,7 @@ const MobileMenu = () => {
           justifyContent: "center",
           width: "calc(100% - 40px)",
           padding: 0,
-          margin: "0 quto",
+          margin: "0 auto",
         }}
         href="tel:+972522630384"
       >
