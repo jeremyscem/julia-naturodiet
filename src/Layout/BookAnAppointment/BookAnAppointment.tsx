@@ -1,5 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
 import { colors } from "theme/colors";
@@ -60,15 +61,16 @@ const BookAnAppointment = () => {
           borderBottomLeftRadius: isClientDesktop ? "500px" : "24px",
           width: isClientDesktop ? "85%" : "auto",
           margin: "0 auto",
+          height: isClientDesktop ? "350px" : "auto",
         }}
       >
         <Typography
           color="white"
           variant="h2"
-          maxWidth={"650px"}
+          maxWidth={"850px"}
           textAlign={"center"}
         >
-          Take the First Step Towards Better Health
+          Reprenez le contrôle de votre alimentation et de votre bien-être !{" "}
         </Typography>
         <Typography
           color="white"
@@ -76,24 +78,31 @@ const BookAnAppointment = () => {
           maxWidth={"768px"}
           textAlign={"center"}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-          tristique.
+          Un coaching personnalisé pour manger sainement, perdre du poids et
+          vous sentir mieux, sans privation ni frustration.
         </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: colors.neutral,
-            color: "black",
-            border: "1px solid black",
-            width: "232px",
+        <Link
+          style={{
+            textDecoration: "none",
+            paddingRight: "12px",
+            backgroundColor: colors.white,
+            borderRadius: "12px",
+            height: "48px",
+            fontSize: "16px",
+            fontWeight: "700",
+            padding: "0 24px",
+            fontFamily: "Lora",
+            textTransform: "none",
+            boxShadow: "none",
+            display: "flex",
+            alignItems: "center",
           }}
+          href="tel:+972522630384"
         >
           <Typography color="black" variant="body2" fontWeight={700}>
-            Book an Appointment
+            Prendre rendez-vous
           </Typography>
-        </Button>
+        </Link>
       </Box>
     </Box>
   );

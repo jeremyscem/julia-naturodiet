@@ -80,11 +80,11 @@ const ServicesDetails = () => {
           <Typography mb={1} variant="body2">
             {services[0].name}
           </Typography>
-          <Typography mb={3} variant="h3">
+          <Typography mb={3} variant="h5">
             {services[0].title}
           </Typography>
-          <Typography mb={4} variant="body1">
-            {services[0].title}
+          <Typography mb={4} variant="body2" fontWeight={400}>
+            {services[0].description}
           </Typography>
 
           <Typography variant="body1">
@@ -139,11 +139,11 @@ const ServicesDetails = () => {
               <Typography mb={1} variant="body2">
                 {service.name}
               </Typography>
-              <Typography mb={1} variant="h3">
+              <Typography mb={1} variant="h5">
                 {service.title}
               </Typography>
-              <Typography mb={3} variant="body1">
-                {service.title}
+              <Typography mb={3} variant="body2" fontWeight={400}>
+                {service.description}
               </Typography>
 
               <Typography variant="body1">
@@ -158,9 +158,6 @@ const ServicesDetails = () => {
 
             {isDesktopDevice ? (
               <Image
-                style={{
-                  flexGrow: 1,
-                }}
                 src={service.imageUrl}
                 width={320}
                 height={368}

@@ -1,6 +1,6 @@
 "use client";
 
-import { AppBar, Box, Button, IconButton, List, ListItem } from "@mui/material";
+import { AppBar, Box, IconButton, List, ListItem } from "@mui/material";
 import { useAppContext } from "common/AppContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,9 +73,28 @@ const Header = () => {
               </ListItem>
             ))}
           </List>
-          <Button sx={{ height: "40px" }} variant="contained" color="primary">
-            Book a Consultation
-          </Button>
+          <Link
+            style={{
+              textDecoration: "none",
+              paddingRight: "12px",
+              backgroundColor: colors.black,
+              color: colors.white,
+              borderRadius: "12px",
+              height: "48px",
+              fontSize: "16px",
+              fontWeight: "700",
+              padding: "0 24px",
+              fontFamily: "Lora",
+              textTransform: "none",
+              boxShadow: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            href="tel:+972522630384"
+          >
+            Prendre un rendez-vous
+          </Link>
         </Box>
         <IconButton
           onClick={() => setDrawerOpen((prevState) => !prevState)}

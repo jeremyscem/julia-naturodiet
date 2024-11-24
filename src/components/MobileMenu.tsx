@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItem } from "@mui/material";
+import { Box, List, ListItem } from "@mui/material";
 import { useAppContext } from "common/AppContext";
 import Link from "next/link";
 import { colors } from "theme/colors";
@@ -43,13 +43,30 @@ const MobileMenu = () => {
           </Link>
         ))}
       </List>
-      <Button
-        sx={{ height: "40px", width: "calc(100% - 40px)", margin: "0 auto" }}
-        variant="contained"
-        color="primary"
+      <Link
+        style={{
+          textDecoration: "none",
+          paddingRight: "12px",
+          backgroundColor: colors.black,
+          color: colors.white,
+          borderRadius: "12px",
+          height: "48px",
+          fontSize: "16px",
+          fontWeight: "700",
+          fontFamily: "Lora",
+          textTransform: "none",
+          boxShadow: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "calc(100% - 40px)",
+          padding: 0,
+          margin: "0 quto",
+        }}
+        href="tel:+972522630384"
       >
-        Book a Consultation
-      </Button>
+        Prendre un rendez-vous
+      </Link>
     </Box>
   );
 };

@@ -1,13 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Video } from "common/Video";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
 import { colors } from "theme/colors";
 
 const HeroSection = () => {
   const [isClientDesktop, setIsClientDesktop] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     setIsClientDesktop(isDesktop);
   }, []);
@@ -65,16 +67,15 @@ const HeroSection = () => {
           sx={{ paddingInlineEnd: isClientDesktop ? "56px" : "0" }}
           variant="h1"
         >
-          Reclaim Your Vitality with Naturopathic Care
+          Équilibrez Votre Corps, Transformez Votre Vie
         </Typography>
         <Typography
           sx={{ paddingInlineEnd: isClientDesktop ? "40px" : "0" }}
           variant="body1"
         >
-          Julia Scemama&#39;s naturopathic approach addresses the root causes of
-          your discomfort, offering personalized treatments that promote healing
-          and well-being. Discover a natural path to a healthier, more balanced
-          life.
+          Découvrez une approche naturelle et personnalisée pour retrouver votre
+          bien-être grâce à une alimentation équilibrée et un accompagnement sur
+          mesure
         </Typography>
         <Box
           sx={{
@@ -84,15 +85,36 @@ const HeroSection = () => {
             width: isClientDesktop ? "fit-content" : "100%",
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ paddingRight: "12px" }}
+          <Link
+            style={{
+              textDecoration: "none",
+              paddingRight: "12px",
+              backgroundColor: colors.black,
+              color: colors.white,
+              borderRadius: "12px",
+              height: "48px",
+              fontSize: "16px",
+              fontWeight: "700",
+              padding: "0 24px",
+              fontFamily: "Lora",
+              textTransform: "none",
+              boxShadow: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            href="tel:+972522630384"
           >
-            Book a Consultation <span style={{ marginLeft: "14px" }}>&gt;</span>
-          </Button>
-          <Button variant="contained" color="secondary">
-            My services
+            Prendre rendez-vous <span style={{ marginLeft: "14px" }}>&gt;</span>
+          </Link>
+          <Button
+            onClick={() => {
+              router.push("/myservices");
+            }}
+            variant="contained"
+            color="secondary"
+          >
+            Mes services
           </Button>
         </Box>
       </Box>

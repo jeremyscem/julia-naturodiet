@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const AboutMe = () => {
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -25,7 +27,9 @@ const AboutMe = () => {
         >
           <Typography variant="body1">À propos de moi</Typography>
           <Box sx={{ flex: "1", marginRight: "32px" }}>
-            <Typography variant="h2">À propos de moi</Typography>
+            <Typography variant="h2">
+              Découvrez Mon Parcours en Nutrition et Bien-Être
+            </Typography>
           </Box>
         </Box>
         <Box
@@ -37,15 +41,30 @@ const AboutMe = () => {
           }}
         >
           <Typography variant="body1">
-            Description Description Description Description Description
-            Description Description Description Description Description
-            Description Description Description Description Description
-            Description Description Description Description{" "}
+            Bonjour et merci de votre visite ! Je suis Julia, naturopathe,
+            diplômée de l’école Reidman et passionnée par le bien-être et la
+            nutrition, dédiée à vous aider à atteindre vos objectifs de santé.
+            La naturopathie, c&apos;est une approche qui utilise des méthodes
+            naturelles pour aider le corps à se guérir et se sentir mieux. Elle
+            repose sur des principes simples notamment avoir une bonne
+            alimentation, dont c’est ma spécialité. En tant que naturopathe et
+            coach en nutrition, j’ai pour mission d’accompagner ceux qui
+            cherchent à améliorer leur rapport à la nourriture, notamment à
+            travers le rééquilibrage alimentaire et la perte de poids. Amoureuse
+            de la cuisine gourmande, je crois fermement que l’on peut manger
+            sainement tout en prenant plaisir. Je rejette les régimes
+            restrictifs qui conduisent souvent à la frustration. Mon approche
+            consiste à vous guider vers une alimentation équilibrée et saine
+            avec du goût, tout en respectant vos besoins nutritionnels. Mon but
+            est de vous aider à vous sentir bien dans votre corps tout en
+            savourant chaque bouchée. Ensemble, découvrons comment allier santé
+            et plaisir !
           </Typography>
           <Button
             sx={{ width: "137px", whiteSpace: "nowrap" }}
             variant="contained"
             color="primary"
+            onClick={() => router.push("/contact")}
           >
             En savoir plus
           </Button>
@@ -60,8 +79,6 @@ const AboutMe = () => {
           marginLeft: "-50vw",
           marginRight: "-50vw",
           height: "510px",
-          boxShadow:
-            "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
 
           "@media (max-width: 768px)": {
             boxShadow: "none",
