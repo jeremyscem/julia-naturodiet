@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Julia Naturodiet",
   description: "Julia Naturodiet, votre conseillère nutritionnelle ",
   keywords: [
+    "Julia Naturodiet",
     "naturopathe",
     "régime",
     "coach en nutrition",
