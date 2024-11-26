@@ -91,7 +91,7 @@ const Header = () => {
               alignItems: "center",
               justifyContent: "center",
             }}
-            href="tel:+972522630384"
+            href="https://wa.me/+972522630384"
           >
             Prendre un rendez-vous
           </Link>

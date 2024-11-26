@@ -96,7 +96,7 @@ const HeroSection = () => {
               alignItems: "center",
               justifyContent: "center",
             }}
-            href="tel:+972522630384"
+            href="https://wa.me/+972522630384"
           >
             Prendre rendez-vous <span style={{ marginLeft: "14px" }}>&gt;</span>
           </Link>

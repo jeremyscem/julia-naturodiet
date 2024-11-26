@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, DialogTitle, IconButton, Typography } from "@mui/material";
+import CustomDialog from "common/CustomDialog";
 import Image from "next/image";
+import { useState } from "react";
 import { testimonials } from "staticData/testimonials";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,6 +10,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { colors } from "theme/colors";
+import CloseIcon from "../../../public/icons/CloseIcon";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
@@ -59,13 +62,15 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     0px 4px 6px -2px rgba(0, 0, 0, 0.03);
   max-width: 416px;
   box-sizing: border-box;
-
+  cursor: pointer;
   @media (max-width: 768px) {
     border-radius: 16px;
     padding: 24px;
   }
 `;
 const Testimonials = () => {
+  const [openTestimonial, setOpenTestimonial] = useState(false);
+  const [testimonial, setTestimonial] = useState("");
   return (
     <Box
       sx={{
@@ -103,12 +108,36 @@ const Testimonials = () => {
         }}
       >
         {testimonials.map((item) => (
-          <StyledSwiperSlide key={item.id}>
-            <Typography variant="body1" sx={{ fontWeight: "800" }}>
+          <StyledSwiperSlide
+            onClick={() => {
+              setOpenTestimonial(true);
+              setTestimonial(item.text);
+            }}
+            key={item.id}
+          >
+            <Typography
+              variant="body1"
+              sx={{
+                fontWeight: "800",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
+                whiteSpace: "normal",
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 4,
+              }}
+            >
               {item.text}
             </Typography>
+
             <Typography variant="body2" sx={{ fontWeight: "400" }}>
               {item.name}
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ fontWeight: "400", textDecoration: "underline" }}
+            >
+              Témoignage complet
             </Typography>
           </StyledSwiperSlide>
         ))}
@@ -129,6 +158,33 @@ const Testimonials = () => {
           />
         </IconButton>
       </StyledSwiper>
+      <CustomDialog
+        open={openTestimonial}
+        onClose={() => {
+          setOpenTestimonial(false);
+          setTestimonial("");
+        }}
+      >
+        <DialogTitle>Témoignage</DialogTitle>
+        <IconButton
+          sx={{
+            position: "absolute",
+            top: "16px",
+            right: "16px",
+            borderRadius: "50%",
+            border: `1px solid ${colors.chinaRose}`,
+          }}
+          onClick={() => {
+            setOpenTestimonial(false);
+            setTestimonial("");
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <Box sx={{ padding: "16px" }}>
+          <Typography variant="body1">{testimonial}</Typography>
+        </Box>
+      </CustomDialog>
     </Box>
   );
 };

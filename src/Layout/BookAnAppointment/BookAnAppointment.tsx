@@ -97,7 +97,7 @@ const BookAnAppointment = () => {
             display: "flex",
             alignItems: "center",
           }}
-          href="tel:+972522630384"
+          href="https://wa.me/+972522630384"
         >
           <Typography color="black" variant="body2" fontWeight={700}>
             Prendre rendez-vous

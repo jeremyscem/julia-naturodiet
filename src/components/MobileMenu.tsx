@@ -63,7 +63,7 @@ const MobileMenu = () => {
           padding: 0,
           margin: "0 auto",
         }}
-        href="tel:+972522630384"
+        href="https://wa.me/+972522630384"
       >
         Prendre un rendez-vous
       </Link>

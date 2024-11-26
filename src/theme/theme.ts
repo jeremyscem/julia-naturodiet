@@ -16,14 +16,14 @@ const theme = createTheme({
           fontSize:"56px",
           fontWeight:"900",
           "@media (max-width: 768px)": {
-            fontSize:"40px",
+            fontSize:"24px",
           },
       },
       h2: {
           fontSize:"48px",
           fontWeight:"700",
           "@media (max-width: 768px)": {
-            fontSize:"36px",
+            fontSize:"24px",
           },
       },
       h3: {
@@ -40,6 +40,9 @@ const theme = createTheme({
       h5: {
           fontSize:"24px",
           fontWeight:"700",
+          "@media (max-width: 768px)": {
+            fontSize:"18px",
+          },
       },
       h6: {
           fontSize:"20px",
@@ -89,6 +92,11 @@ const theme = createTheme({
                       textTransform:"none",
                       border:`1px solid ${colors.black}`,
                       boxShadow:"none",
+                      "&:hover": {
+                        backgroundColor: colors.neutral,
+                        color: colors.black,
+                        border:`1px solid ${colors.black}`,
+                      },
                     },
                   },
               ],
