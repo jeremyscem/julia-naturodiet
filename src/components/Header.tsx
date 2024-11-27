@@ -39,7 +39,7 @@ const Header = () => {
       >
         <IconButton onClick={() => router.push("/")}>
           <Image
-            src="/companyLogo.png"
+            src="/icons/companyLogo.png"
             width={126}
             height={40}
             alt="logo julia naturodiet"
