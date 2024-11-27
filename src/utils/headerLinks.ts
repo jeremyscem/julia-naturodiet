@@ -4,7 +4,7 @@ export const navigationLinks = [
         link: "/about",
     },
     {
-        name: "My Services",
+        name: "Mes Services",
         link: "/myservices",
     },
     {

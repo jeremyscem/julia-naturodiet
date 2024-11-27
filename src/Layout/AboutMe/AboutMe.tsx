@@ -1,9 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const AboutMe = () => {
-  const router = useRouter();
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <Box
       sx={{
@@ -49,22 +50,45 @@ const AboutMe = () => {
             gap: "40px",
           }}
         >
-          <Typography variant="body1">
+          <Typography
+            sx={{
+              textOverflow: "ellipsis",
+              overflow: "hidden",
+              whiteSpace: "normal",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: isExpanded ? "unset" : 6,
+            }}
+            variant="body1"
+          >
             Bonjour et merci de votre visite ! Je suis Julia, naturopathe,
             diplômée de l’école Reidman et passionnée par le bien-être et la
             nutrition, dédiée à vous aider à atteindre vos objectifs de santé.
             La naturopathie, c&apos;est une approche qui utilise des méthodes
             naturelles pour aider le corps à se guérir et se sentir mieux. Elle
             repose sur des principes simples notamment avoir une bonne
-            alimentation, dont c’est ma spécialité....
+            alimentation, dont c’est ma spécialité. En tant que naturopathe et
+            coach en nutrition, j’ai pour mission d’accompagner ceux qui
+            cherchent à améliorer leur rapport à la nourriture, notamment à
+            travers le rééquilibrage alimentaire et la perte de poids. Amoureuse
+            de la cuisine gourmande, je crois fermement que l’on peut manger
+            sainement tout en prenant plaisir. Je rejette les régimes
+            restrictifs qui conduisent souvent à la frustration. Mon approche
+            consiste à vous guider vers une alimentation équilibrée et saine
+            avec du goût, tout en respectant vos besoins nutritionnels. Mon but
+            est de vous aider à vous sentir bien dans votre corps tout en
+            savourant chaque bouchée. Ensemble, découvrons comment allier santé
+            et plaisir !
           </Typography>
           <Button
             sx={{ width: "137px", whiteSpace: "nowrap" }}
             variant="contained"
             color="primary"
-            onClick={() => router.push("/contact")}
+            onClick={() => {
+              setIsExpanded(!isExpanded);
+            }}
           >
-            En savoir plus
+            {isExpanded ? "Réduire" : "En savoir plus"}
           </Button>
         </Box>
       </Box>

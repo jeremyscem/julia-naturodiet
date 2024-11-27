@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "healthy",
   ],
   icons: {
-    icon: "/companyLogo.svg",
+    icon: "/icons/companyLogo.png",
   },
 };
 

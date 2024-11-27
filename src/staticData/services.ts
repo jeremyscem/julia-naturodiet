@@ -11,7 +11,7 @@ export const services:ServicesType[] = [{
 },{
     "isPrincipal": false,
     "name": "Suivi Personnalisé via WhatsApp",
-    "title": "Transformez votre alimentation avec un suivi personnalisé 5j/7 !",
+    "title": "Transformez votre alimentation avec un suivi personnalisé !",
     "description": "Atteignez vos objectifs grâce à un programme nutritionnel sur mesure et un accompagnement motivant via WhatsApp. Changez vos habitudes en un mois, avec un soutien à chaque étape ",
     "imageUrl": "/services/service2.png",
     "url": "/myservices"
