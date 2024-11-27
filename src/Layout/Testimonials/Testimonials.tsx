@@ -88,7 +88,7 @@ const Testimonials = () => {
         >
           <Typography variant="body1">Temoignages</Typography>
           <Box sx={{ flex: "1", marginRight: "32px" }}>
-            <Typography variant="h2">À propos de moi</Typography>
+            <Typography variant="h2">Des patients satisfaits</Typography>
           </Box>
         </Box>
       </Box>

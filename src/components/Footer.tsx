@@ -30,7 +30,7 @@ const Footer = () => {
         }}
       >
         <Image
-          src="/footerCompanyLogo.svg"
+          src="/icons/companyFooterLogo.png"
           width={126}
           height={40}
           alt="logo julia"

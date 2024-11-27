@@ -39,7 +39,7 @@ const Header = () => {
       >
         <IconButton onClick={() => router.push("/")}>
           <Image
-            src="/companyLogo.svg"
+            src="/companyLogo.png"
             width={126}
             height={40}
             alt="logo julia naturodiet"
@@ -103,7 +103,7 @@ const Header = () => {
             backgroundColor: colors.chinaRose,
             width: "48px",
             height: "48px",
-            ":hover": { backgroundColor: colors.chinaRose },
+
             "@media (min-width: 768px)": { display: "none" },
           }}
           size="large"

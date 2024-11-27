@@ -40,9 +40,7 @@ const theme = createTheme({
       h5: {
           fontSize:"24px",
           fontWeight:"700",
-          "@media (max-width: 768px)": {
-            fontSize:"18px",
-          },
+       
       },
       h6: {
           fontSize:"20px",
@@ -77,6 +75,8 @@ const theme = createTheme({
                     fontFamily:"Lora",
                     textTransform:"none",
                     boxShadow:"none",
+
+                    ":hover": { backgroundColor: colors.chinaRose },
                   },
                 },{
                     props: { variant: 'contained', color: 'secondary' },
