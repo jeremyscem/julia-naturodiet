@@ -20,6 +20,10 @@ export const instagram:InstagramPic[] = [
         link: "https://www.instagram.com/p/DCjMWpwMG2O/",
         imageUrl:"/instagram/aubergine.jpeg"
     },
-    
+    {
+        alt: "photo",
+        link: "https://www.instagram.com/p/DDDQ3P5seSd/",
+        imageUrl:"/instagram/cookie.jpg"
+    },
 
 ]

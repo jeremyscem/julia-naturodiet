@@ -1,10 +1,10 @@
 export const navigationLinks = [
     {
-        name: "A Propos de moi",
+        name: "A propos de moi",
         link: "/about",
     },
     {
-        name: "Mes Services",
+        name: "Mes services",
         link: "/myservices",
     },
     {
