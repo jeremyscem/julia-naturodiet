@@ -109,7 +109,51 @@ const theme = createTheme({
                 paddingBottom:"24px",
               },
             },
+        },
+       MuiContainer: {
+        styleOverrides: {
+          root: {
+            "@media (min-width: 1200px)": {
+              maxWidth: "1440px",
+            },
           },
+        },
+      },
+      MuiGrid:{
+        styleOverrides: {
+          root: {
+            "@media (max-width: 768px)": {
+              paddingLeft:"0px!important",
+            },
+          },
+        },
+      },
+      MuiTabs: {
+          styleOverrides: {
+            flexContainer: {
+              overflow:'auto',
+              "@media (max-width: 768px)": {
+                paddingInlineStart:"150px"
+              },
+            },
+          }
+      },
+        MuiTab: {
+            styleOverrides: {
+              root: {
+                color: colors.black,
+                height:"40px",
+                minHeight:"40px",
+                "&.Mui-selected": {
+                  borderRadius:"4px",
+                  border:`1px solid ${colors.black}`,
+                  backgroundColor: colors.lightPink,
+                  color: colors.black,
+                },
+              },
+             
+            },
+        },
     },
     
 });
