@@ -10,16 +10,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { colors } from "theme/colors";
 
 const StyledSwiper = styled(Swiper)`
-  width: calc(100% + 128px);
   margin-left: -64px;
   margin-right: -64px;
-  .swiper-wrapper {
-    justify-content: center;
-  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
   width: 240px;
+  max-width: 240px;
 `;
 const Instagram = () => {
   return (
@@ -59,7 +56,7 @@ const Instagram = () => {
           attendent pour accompagner votre rééquilibrage alimentaire.
         </Typography>
       </Box>
-      <StyledSwiper loop={true} slidesPerView="auto">
+      <StyledSwiper loop slidesPerView="auto">
         {instagram.map((item, i) => (
           <StyledSwiperSlide key={i}>
             <Link
@@ -77,10 +74,11 @@ const Instagram = () => {
                 }}
               >
                 <Image
+                  priority
                   src={item.imageUrl}
                   alt={item.alt}
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
                 <IconButton
                   sx={{
