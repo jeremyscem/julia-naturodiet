@@ -1,5 +1,6 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { AppContextProvider } from "common/AppContext";
 import ClientDrawerWrapper from "common/ClientDrawerWrapper";
 import type { Metadata } from "next";
@@ -8,11 +9,20 @@ import Header from "../components/Header";
 import theme from "../theme/theme";
 
 export const metadata: Metadata = {
-  title: "Julia Naturodiet",
-  description: "Julia Naturodiet, votre conseillère nutritionnelle ",
+  title: {
+    default: "Julia Naturodiet",
+    template: "%s | Julia Naturodiet",
+  },
+  openGraph: {
+    description: "Julia Naturodiet, votre conseillère nutritionnelle",
+  },
+
   keywords: [
     "Julia Naturodiet",
     "naturopathe",
+    "naturodiet",
+    "naturopath",
+    "diet",
     "régime",
     "coach en nutrition",
     "nutrition",
@@ -34,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0, backgroundColor: colors.neutral }}>
+        <GoogleAnalytics gaId="G-W8LP2J5G2M" />
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <AppContextProvider>
