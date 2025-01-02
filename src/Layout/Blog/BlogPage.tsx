@@ -24,7 +24,11 @@ interface TabPanelProps {
 
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
+  const [isClientTabDesktop, setIsClientTabDesktop] = useState(false);
 
+  useEffect(() => {
+    setIsClientTabDesktop(isDesktop);
+  }, []);
   return (
     <Container
       role="tabpanel"
@@ -36,7 +40,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {value === index && (
         <Box
           sx={{
-            p: 3,
+            p: isClientTabDesktop ? 3 : 0,
             display: "flex",
             gap: "64px 32px",
             flexWrap: "wrap",
@@ -125,6 +129,7 @@ const BlogPage = () => {
             container
             spacing={isClientDesktop ? 2 : 7}
             justifyContent="center"
+            padding={0}
           >
             {blogData.map((blog) => (
               <Grid
@@ -139,7 +144,6 @@ const BlogPage = () => {
               >
                 <StyledLink
                   style={{
-                    maxWidth: "416px",
                     textDecoration: "none",
                     display: "flex",
                     width: "100%",
@@ -182,7 +186,6 @@ const BlogPage = () => {
                         borderBottomRightRadius: "40px",
                         display: "flex",
                         flexDirection: "column",
-                        maxWidth: "416px",
                         width: "100%",
                         height: "234px",
                       }}
